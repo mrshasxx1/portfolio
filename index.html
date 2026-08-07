@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shaswot Gautam — Full-Stack Software Engineer</title>
+<meta name="description" content="Shaswot Gautam — Full-Stack Software Engineer & App Developer. Harvard CS50x, CS50P & CS50W graduate. I build web apps, Android apps, and games with C, Python, JavaScript, Java & Node.js." />
+
+<!-- Fonts: Inter (body) with system fallbacks -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Neon scroll progress bar (top edge) -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ================= NAV ================= -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="logo">Shaswot<span>.</span>dev</a>
+
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#work" class="nav-link">Work</a></li>
+      <li><a href="#education" class="nav-link">Education</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="nav-cta">Hire Me</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-controls="navMenu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero">
+  <div class="hero-container">
+    <div class="hero-text">
+      <p class="hero-greeting reveal">Hi, I'm</p>
+      <h1 class="reveal">Shaswot <span class="grad-text">Gautam</span></h1>
+
+      <div class="role-line reveal" aria-hidden="true">
+        <span class="role-text" id="typewriter"></span><span class="cursor">|</span>
+      </div>
+
+      <p class="hero-intro reveal">
+        Harvard CS50x, CS50P, and CS50W graduate. I build scalable web applications,
+        native Android apps, and games using <strong>C, Python, JavaScript, Java, and Node.js</strong>.
+        I turn complex problems into shipped products.
+      </p>
+
+      <div class="hero-buttons reveal">
+        <a href="#work" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+      </div>
+
+      <!-- ✏️ Replace # with your real profile links -->
+      <div class="hero-socials reveal">
+        <a href="https://github.com/mrshasxx1" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub" title="GitHub">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.28-1.69-1.28-1.69-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.35.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.04.77 2.1v3.11c0 .3.21.66.8.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/mr-shashwat-84a60b40b/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn" title="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        </a>
+        <a href="mailto:mrgautam2026@gmail.com" class="social-icon" aria-label="Email" title="Email">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Photo -->
+    <div class="hero-photo reveal">
+      <div class="photo-ring">
+        <img src="photo.jpg" alt="Shaswot Gautam" />
+      </div>
+    </div>
+  </div>
+
+  <a href="#skills" class="hero-scroll" aria-label="Scroll down">scroll <span>↓</span></a>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section id="skills" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-eyebrow">What I Use</p>
+      <h2>My Skills</h2>
+      <p class="section-sub">Core languages I ship with — plus the everyday tools I reach for to get things done fast.</p>
+    </div>
+
+    <div class="skill-group reveal">
+      <h3 class="skill-group-title">💻 Languages</h3>
+      <div class="skill-cloud">
+        <span class="skill">Python</span>
+        <span class="skill">C</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">Java</span>
+        <span class="skill">SQL</span>
+        <span class="skill">HTML5</span>
+        <span class="skill">CSS3</span>
+        <span class="skill">Bash</span>
+      </div>
+    </div>
+
+    <div class="skill-group reveal">
+      <h3 class="skill-group-title">🛠️ Frameworks &amp; Web</h3>
+      <div class="skill-cloud">
+        <span class="skill">Node.js</span>
+        <span class="skill">Flask</span>
+        <span class="skill">React</span>
+        <span class="skill">Bootstrap</span>
+        <span class="skill">Tailwind CSS</span>
+        <span class="skill">Jinja2</span>
+        <span class="skill">REST APIs</span>
+        <span class="skill">Responsive Design</span>
+      </div>
+    </div>
+
+    <div class="skill-group reveal">
+      <h3 class="skill-group-title">🗄️ Databases &amp; Tools</h3>
+      <div class="skill-cloud">
+        <span class="skill">SQLite</span>
+        <span class="skill">MongoDB</span>
+        <span class="skill">Git &amp; GitHub</span>
+        <span class="skill">Postman</span>
+        <span class="skill">VS Code</span>
+        <span class="skill">Linux</span>
+        <span class="skill">JSON</span>
+        <span class="skill">Vercel</span>
+      </div>
+    </div>
+
+    <div class="skill-group reveal">
+      <h3 class="skill-group-title">🧠 Currently Learning</h3>
+      <div class="skill-cloud">
+        <span class="skill learning">TypeScript</span>
+        <span class="skill learning">Next.js</span>
+        <span class="skill learning">Docker</span>
+        <span class="skill learning">Firebase</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WORK ================= -->
+<section id="work" class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-eyebrow">Portfolio</p>
+      <h2>My Work</h2>
+      <p class="section-sub">Real products I've designed, built, and shipped.</p>
+    </div>
+
+    <div class="work-grid">
+      <!-- ⭐ FEATURED PROJECT — paste the live link you give me into href="..." below -->
+      <article class="work-card featured reveal">
+        <div class="work-card-top">
+          <div class="work-icon">⏱️</div>
+          <div class="work-tags">
+            <span>Flask</span><span>SQLite</span><span>Vanilla JS</span>
+          </div>
+        </div>
+        <h3>LanceFlow — Freelance Time Tracker</h3>
+        <p>
+          A full-stack freelance time tracker: manage clients, track time with a live
+          stopwatch that survives page reloads, and generate professional invoices
+          with one click — complete with PDF export.
+        </p>
+        <div class="work-links">
+          <a class="link-live" href="https://lance-flow-rho.vercel.app/" target="_blank" rel="noopener">Live Demo →</a>
+        </div>
+      </article>
+
+      <article class="work-card reveal">
+        <div class="work-card-top">
+          <div class="work-icon">🚀</div>
+          <div class="work-tags"><span>Web App</span><span>Vercel</span></div>
+        </div>
+        <h3>creatorOS</h3>
+        <p>A full web app from idea to launch — designed, built, and deployed live on Vercel.<!-- ✏️ Describe what creatorOS does here --></p>
+        <div class="work-links">
+          <a class="link-live" href="https://creatoros-ten-kappa.vercel.app" target="_blank" rel="noopener">Live Demo →</a>
+        </div>
+      </article>
+
+      <article class="work-card reveal">
+        <div class="work-card-top">
+          <div class="work-icon">🎮</div>
+          <div class="work-tags"><span>Python</span><span>Game</span></div>
+        </div>
+        <h3>Game Project</h3>
+        <p>A game you built with Python or C — mechanics, challenges you solved, and what you learned. This card is ready for it.</p>
+        <div class="work-links">
+          <a class="link-live" href="#" target="_blank" rel="noopener">View →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section id="education" class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-eyebrow">Education</p>
+      <h2>Certifications</h2>
+      <p class="section-sub">Computer science foundations from Harvard — problem solving in C and Python, then full-stack web with Django &amp; JavaScript.</p>
+    </div>
+
+    <div class="edu-grid">
+      <article class="edu-card reveal">
+        <div class="edu-logo">🎓</div>
+        <h3>CS50x</h3>
+        <p class="edu-school">Harvard University — Introduction to Computer Science</p>
+        <p>Algorithms, data structures, memory, and problem solving in C and Python.</p>
+      </article>
+
+      <article class="edu-card reveal">
+        <div class="edu-logo">🐍</div>
+        <h3>CS50P</h3>
+        <p class="edu-school">Harvard University — Introduction to Programming with Python</p>
+        <p>Python fundamentals, libraries, testing, and building real command-line tools.</p>
+      </article>
+
+      <article class="edu-card reveal">
+        <div class="edu-logo">🌐</div>
+        <h3>CS50W</h3>
+        <p class="edu-school">Harvard University — Web Programming with Python &amp; JavaScript</p>
+        <p>Full-stack web development: HTML, CSS, JavaScript, Django, SQL, and deployment.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="section section-alt">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-eyebrow">Contact</p>
+      <h2>Let's Build Something</h2>
+      <p class="section-sub">I'm open to freelance work, collaborations, and interesting problems.</p>
+    </div>
+
+    <div class="contact-card reveal">
+      <div class="contact-info">
+        <h3>Shaswot Gautam</h3>
+        <p>Full-Stack Software Engineer &amp; App Developer</p>
+        <a class="contact-email" href="mailto:mrgautam2026@gmail.com">mrgautam2026@gmail.com</a>
+        <div class="contact-socials">
+          <a href="https://github.com/mrshasxx1" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">GitHub</a>
+          <a href="https://www.linkedin.com/in/mr-shashwat-84a60b40b/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">LinkedIn</a>
+        </div>
+      </div>
+      <a href="mailto:mrgautam2026@gmail.com" class="btn btn-primary btn-lg">📧 Email Me</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <p>© <span id="year"></span> Shaswot Gautam. Built with <span class="grad-text">♥</span> — C, Python, JavaScript &amp; a lot of coffee.</p>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>
