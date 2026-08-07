@@ -7,7 +7,7 @@ no frameworks, no build step, no dependencies.
 
 - **Hero** — name, animated typewriter roles, photo with neon ring
 - **Skills** — languages, frameworks, tools, currently learning
-- **Work** — live projects: LanceFlow (time tracker) & creatorOS
+- **Work** — live projects: LanceFlow (time tracker), creatorOS & StreamForge AI (video processing)
 - **Education** — Harvard CS50x, CS50P, CS50W
 - **Contact** — email, GitHub, LinkedIn
 

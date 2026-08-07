@@ -1,0 +1,14 @@
+# Freebuff desktop app data (never commit)
+.freebuff/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
