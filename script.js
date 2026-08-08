@@ -5,6 +5,9 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  const finePointer = window.matchMedia('(pointer: fine)').matches;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   /* ---------- Mobile hamburger menu ---------- */
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('navMenu');
@@ -39,11 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     backToTop.classList.toggle('show', y > 400);
   }
 
-  /* ---------- Fade-in fallback: guarantee every reveal triggers ----------
-     IntersectionObserver only reports states at update time, so a fast
-     scroll (wheel flick, PageDown, keyboard) can skip elements. This
-     passive fallback force-reveals anything that enters — or passes —
-     the viewport, so nothing ever stays hidden. */
+  /* ---------- Fade-in fallback: guarantee every reveal triggers ---------- */
   const pendingReveals = new Set(document.querySelectorAll('.reveal'));
   let revealTick = false;
   function forceReveals() {
@@ -63,8 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener('scroll', () => { updateChrome(); scheduleReveals(); }, { passive: true });
   updateChrome();
-  // Defer the first reveal pass until after the first paint so the hero's
-  // fade-in transition actually plays instead of loading already-visible.
   requestAnimationFrame(() => requestAnimationFrame(forceReveals));
 
   backToTop.addEventListener('click', () => {
@@ -87,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     },
-    { rootMargin: '-45% 0px -50% 0px' } // fires when a section crosses mid-viewport
+    { rootMargin: '-45% 0px -50% 0px' }
   );
   sections.forEach((section) => spyObserver.observe(section));
 
@@ -106,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
   );
   let revealIndex = 0;
   pendingReveals.forEach((el) => {
-    // Subtle stagger: later elements animate slightly later
     el.style.transitionDelay = (revealIndex++ % 4) * 0.08 + 's';
     revealObserver.observe(el);
   });
@@ -138,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let delay = deleting ? 40 : 80;
 
     if (!deleting && charIndex === current.length) {
-      delay = 1600; // pause when the full word is shown
+      delay = 1600;
       deleting = true;
     } else if (deleting && charIndex === 0) {
       deleting = false;
@@ -149,6 +145,118 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(type, delay);
   }
   type();
+
+  /* ---------- Cursor glow (fine pointers only) ---------- */
+  const cursorGlow = document.getElementById('cursorGlow');
+  if (finePointer && !reducedMotion && cursorGlow) {
+    let glowX = -500, glowY = -500;
+    let glowTick = false;
+
+    document.body.classList.add('cursor-on');
+    window.addEventListener('mousemove', (e) => {
+      glowX = e.clientX;
+      glowY = e.clientY;
+      if (glowTick) return;
+      glowTick = true;
+      requestAnimationFrame(() => {
+        cursorGlow.style.transform = `translate(${glowX - 240}px, ${glowY - 240}px)`;
+        glowTick = false;
+      });
+    }, { passive: true });
+  }
+
+  /* ---------- Count-up stats ---------- */
+  const counters = document.querySelectorAll('.count');
+  if (counters.length && !reducedMotion) {
+    const countObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target;
+          countObserver.unobserve(el);
+          const target = parseInt(el.dataset.count, 10) || 0;
+          const duration = 1200;
+          const start = performance.now();
+
+          function tick(now) {
+            const p = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - p, 3); // ease-out cubic
+            el.textContent = Math.round(target * eased);
+            if (p < 1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+        });
+      },
+      { threshold: 0.4 }
+    );
+    counters.forEach((c) => countObserver.observe(c));
+  } else {
+    counters.forEach((c) => {
+      c.textContent = c.dataset.count;
+    });
+  }
+
+  /* ---------- Copy email + toast ---------- */
+  const copyBtn = document.getElementById('copyEmail');
+  const toast = document.getElementById('toast');
+  let toastTimer = null;
+
+  function showToast(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2200);
+  }
+
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      const email = 'mrgautam2026@gmail.com';
+      const done = () => showToast('📋 Email copied!');
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(done).catch(() => {
+          // Fallback for older browsers / non-secure contexts
+          const ta = document.createElement('textarea');
+          ta.value = email;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand('copy'); done(); } catch (_) { /* ignore */ }
+          document.body.removeChild(ta);
+        });
+      } else {
+        showToast('Email: mrgautam2026@gmail.com');
+      }
+    });
+  }
+
+  /* ---------- Subtle 3D tilt on work cards (fine pointers only) ---------- */
+  if (finePointer && !reducedMotion) {
+    document.querySelectorAll('.work-card').forEach((card) => {
+      let raf = null;
+
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const px = (e.clientX - rect.left) / rect.width;
+        const py = (e.clientY - rect.top) / rect.height;
+        const rx = (0.5 - py) * 5;   // -2.5deg .. 2.5deg
+        const ry = (px - 0.5) * 5;
+
+        if (raf) cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          card.style.setProperty('--rx', rx.toFixed(2) + 'deg');
+          card.style.setProperty('--ry', ry.toFixed(2) + 'deg');
+        });
+      });
+
+      card.addEventListener('mouseleave', () => {
+        if (raf) cancelAnimationFrame(raf);
+        card.style.setProperty('--rx', '0deg');
+        card.style.setProperty('--ry', '0deg');
+      });
+    });
+  }
 
   /* ---------- Footer year ---------- */
   document.getElementById('year').textContent = new Date().getFullYear();

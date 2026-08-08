@@ -6,14 +6,25 @@
 <title>Shaswot Gautam — Full-Stack Software Engineer</title>
 <meta name="description" content="Shaswot Gautam — Full-Stack Software Engineer & App Developer. Harvard CS50x, CS50P & CS50W graduate. I build web apps, Android apps, and games with C, Python, JavaScript, Java & Node.js." />
 
-<!-- Fonts: Inter (body) with system fallbacks -->
+<!-- Fonts: Space Grotesk (display) · Inter (body) · JetBrains Mono (labels) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+<!-- Ambient background layers (aurora orbs + grid) -->
+<div class="bg-scene" aria-hidden="true">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="grid-overlay"></div>
+</div>
+
+<!-- Cursor glow (desktop only) -->
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
 <!-- Neon scroll progress bar (top edge) -->
 <div class="scroll-progress" id="scrollProgress"></div>
@@ -43,25 +54,30 @@
 <section id="home" class="hero">
   <div class="hero-container">
     <div class="hero-text">
+      <span class="hero-badge reveal">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        Available for freelance &amp; collaborations
+      </span>
+
       <p class="hero-greeting reveal">Hi, I'm</p>
       <h1 class="reveal">Shaswot <span class="grad-text">Gautam</span></h1>
 
       <div class="role-line reveal" aria-hidden="true">
-        <span class="role-text" id="typewriter"></span><span class="cursor">|</span>
+        <span class="role-text" id="typewriter"></span><span class="cursor">▌</span>
       </div>
+      <p class="sr-only">Full-Stack Software Engineer, App Developer, Game Developer, and Problem Solver.</p>
 
       <p class="hero-intro reveal">
         Self-taught full-stack developer and Harvard CS50x, CS50P, and CS50W graduate.
         I build scalable web applications, native Android apps, and games using
-        <strong>C, Python, JavaScript, Java, and Node.js</strong>. I turn complex problems into shipped products.
+        <strong>C, Python, JavaScript, Java, and Node.js</strong> — turning complex problems into shipped products.
       </p>
 
       <div class="hero-buttons reveal">
-        <a href="#work" class="btn btn-primary">View My Work</a>
-        <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        <a href="#work" class="btn btn-primary">View My Work <span class="btn-arrow">→</span></a>
+        <a href="#contact" class="btn btn-glass">Get In Touch</a>
       </div>
 
-      <!-- ✏️ Replace # with your real profile links -->
       <div class="hero-socials reveal">
         <a href="https://github.com/mrshasxx1" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub" title="GitHub">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.28-1.69-1.28-1.69-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.35.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.04.77 2.1v3.11c0 .3.21.66.8.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
@@ -73,12 +89,43 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
         </a>
       </div>
+
+      <!-- Stats -->
+      <div class="hero-stats reveal">
+        <div class="stat">
+          <span class="stat-num grad-text"><span class="count" data-count="3">0</span>+</span>
+          <span class="stat-label">Live Projects</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num grad-text"><span class="count" data-count="3">0</span></span>
+          <span class="stat-label">Harvard Certs</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num grad-text"><span class="count" data-count="5">0</span>+</span>
+          <span class="stat-label">Languages</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num grad-text"><span class="count" data-count="100">0</span>%</span>
+          <span class="stat-label">Coffee-Powered</span>
+        </div>
+      </div>
     </div>
 
-    <!-- Photo -->
+    <!-- Photo with orbit badges -->
     <div class="hero-photo reveal">
+      <div class="photo-orbit" aria-hidden="true">
+        <span class="orbit-chip chip-1">🐍 Python</span>
+        <span class="orbit-chip chip-2">⚡ JS</span>
+        <span class="orbit-chip chip-3">🧩 C</span>
+        <span class="orbit-chip chip-4">🟢 Node</span>
+        <span class="orbit-chip chip-5">⚛️ React</span>
+      </div>
       <div class="photo-ring">
         <img src="photo.jpg" alt="Shaswot Gautam" />
+      </div>
+      <div class="photo-card" aria-hidden="true">
+        <span class="photo-card-dot"></span>
+        Open to work — let's build something
       </div>
     </div>
   </div>
@@ -86,12 +133,20 @@
   <a href="#skills" class="hero-scroll" aria-label="Scroll down">scroll <span>↓</span></a>
 </section>
 
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>PYTHON</span><i>◆</i><span>FLASK</span><i>◆</i><span>REACT</span><i>◆</i><span>NODE.JS</span><i>◆</i><span>C</span><i>◆</i><span>JAVA</span><i>◆</i><span>SQL</span><i>◆</i><span>TAILWIND</span><i>◆</i><span>MONGODB</span><i>◆</i><span>DOCKER</span><i>◆</i><span>GIT</span><i>◆</i><span>LINUX</span><i>◆</i>
+    <span>PYTHON</span><i>◆</i><span>FLASK</span><i>◆</i><span>REACT</span><i>◆</i><span>NODE.JS</span><i>◆</i><span>C</span><i>◆</i><span>JAVA</span><i>◆</i><span>SQL</span><i>◆</i><span>TAILWIND</span><i>◆</i><span>MONGODB</span><i>◆</i><span>DOCKER</span><i>◆</i><span>GIT</span><i>◆</i><span>LINUX</span><i>◆</i>
+  </div>
+</div>
+
 <!-- ================= SKILLS ================= -->
 <section id="skills" class="section">
   <div class="container">
     <div class="section-head reveal">
-      <p class="section-eyebrow">What I Use</p>
-      <h2>My Skills</h2>
+      <p class="section-eyebrow">// what_i_use</p>
+      <h2>My <span class="grad-text">Skills</span></h2>
       <p class="section-sub">Core languages I ship with — plus the everyday tools I reach for to get things done fast.</p>
     </div>
 
@@ -134,6 +189,7 @@
         <span class="skill">Linux</span>
         <span class="skill">JSON</span>
         <span class="skill">Vercel</span>
+        <span class="skill">Render</span>
       </div>
     </div>
 
@@ -153,56 +209,78 @@
 <section id="work" class="section section-alt">
   <div class="container">
     <div class="section-head reveal">
-      <p class="section-eyebrow">Portfolio</p>
-      <h2>My Work</h2>
-      <p class="section-sub">Real products I've designed, built, and shipped.</p>
+      <p class="section-eyebrow">// shipped_projects</p>
+      <h2>My <span class="grad-text">Work</span></h2>
+      <p class="section-sub">Real products I've designed, built, and shipped — live on the internet right now.</p>
     </div>
 
     <div class="work-grid">
-      <!-- ⭐ FEATURED PROJECT — paste the live link you give me into href="..." below -->
+      <!-- ⭐ FEATURED — StreamForge AI (live on Render) -->
       <article class="work-card featured reveal">
-        <div class="work-card-top">
-          <div class="work-icon">⏱️</div>
-          <div class="work-tags">
-            <span>Flask</span><span>SQLite</span><span>Vanilla JS</span>
+        <div class="work-cover cover-stream">
+          <span class="cover-emoji">🎬</span>
+          <span class="cover-badge">★ Featured</span>
+        </div>
+        <div class="work-body">
+          <div class="work-card-top">
+            <h3>StreamForge AI</h3>
+            <div class="work-tags">
+              <span>AI</span><span>Video Processing</span><span>Render</span>
+            </div>
+          </div>
+          <p>
+            An AI-powered video processing tool that reformats your videos for every
+            major social platform — YouTube, TikTok, Instagram Reels, Instagram Square,
+            and LinkedIn — with the right aspect ratios, ready in one click.
+          </p>
+          <div class="work-links">
+            <a class="link-live" href="https://streamforge-ai.onrender.com/" target="_blank" rel="noopener">Launch App →</a>
           </div>
         </div>
-        <h3>LanceFlow — Freelance Time Tracker</h3>
-        <p>
-          A full-stack freelance time tracker: manage clients, track time with a live
-          stopwatch that survives page reloads, and generate professional invoices
-          with one click — complete with PDF export.
-        </p>
-        <div class="work-links">
-          <a class="link-live" href="https://lance-flow-rho.vercel.app/" target="_blank" rel="noopener">Live Demo →</a>
+      </article>
+
+      <!-- LanceFlow -->
+      <article class="work-card reveal">
+        <div class="work-cover cover-lance">
+          <span class="cover-emoji">⏱️</span>
+        </div>
+        <div class="work-body">
+          <div class="work-card-top">
+            <h3>LanceFlow</h3>
+            <div class="work-tags">
+              <span>Flask</span><span>SQLite</span><span>JS</span>
+            </div>
+          </div>
+          <p>
+            A full-stack freelance time tracker: manage clients, track time with a live
+            stopwatch that survives page reloads, and generate professional invoices
+            with one click — complete with PDF export.
+          </p>
+          <div class="work-links">
+            <a class="link-live" href="https://lance-flow-rho.vercel.app/" target="_blank" rel="noopener">Live Demo →</a>
+          </div>
         </div>
       </article>
 
+      <!-- creatorOS -->
       <article class="work-card reveal">
-        <div class="work-card-top">
-          <div class="work-icon">🚀</div>
-          <div class="work-tags"><span>Web App</span><span>Vercel</span></div>
+        <div class="work-cover cover-os">
+          <span class="cover-emoji">🚀</span>
         </div>
-        <h3>creatorOS</h3>
-        <p>A full web app from idea to launch — designed, built, and deployed live on Vercel.<!-- ✏️ Describe what creatorOS does here --></p>
-        <div class="work-links">
-          <a class="link-live" href="https://creatoros-ten-kappa.vercel.app" target="_blank" rel="noopener">Live Demo →</a>
-        </div>
-      </article>
-
-      <article class="work-card reveal">
-        <div class="work-card-top">
-          <div class="work-icon">🎬</div>
-          <div class="work-tags"><span>Video Processing</span><span>AI</span><span>Vercel</span></div>
-        </div>
-        <h3>StreamForge AI</h3>
-        <p>
-          An AI-powered video processing tool that reformats your videos for every
-          major social platform — YouTube, TikTok, Instagram Reels, Instagram Square,
-          and LinkedIn — with the right aspect ratios, ready in one click.
-        </p>
-        <div class="work-links">
-          <a class="link-live" href="https://stream-forge-ai-bice.vercel.app/" target="_blank" rel="noopener">Live Demo →</a>
+        <div class="work-body">
+          <div class="work-card-top">
+            <h3>creatorOS</h3>
+            <div class="work-tags">
+              <span>Web App</span><span>Vercel</span>
+            </div>
+          </div>
+          <p>
+            A full web app from idea to launch — designed, built, and deployed live on Vercel.
+            A complete creator toolkit in one clean workspace.
+          </p>
+          <div class="work-links">
+            <a class="link-live" href="https://creatoros-ten-kappa.vercel.app" target="_blank" rel="noopener">Live Demo →</a>
+          </div>
         </div>
       </article>
     </div>
@@ -213,28 +291,37 @@
 <section id="education" class="section">
   <div class="container">
     <div class="section-head reveal">
-      <p class="section-eyebrow">Education</p>
-      <h2>Certifications</h2>
-      <p class="section-sub">Computer science foundations from Harvard — problem solving in C and Python, then full-stack web with Django &amp; JavaScript.</p>
+      <p class="section-eyebrow">// certification</p>
+      <h2>Computer Science <span class="grad-text">Foundations</span></h2>
+      <p class="section-sub">Harvard's CS50 series — problem solving in C and Python, then full-stack web with Django &amp; JavaScript.</p>
     </div>
 
     <div class="edu-grid">
       <article class="edu-card reveal">
-        <div class="edu-logo">🎓</div>
+        <div class="edu-top">
+          <div class="edu-logo">🎓</div>
+          <span class="edu-chip">Completed</span>
+        </div>
         <h3>CS50x</h3>
-        <p class="edu-school">Harvard University — Introduction to Computer Science</p>
+        <p class="edu-school">Harvard University — Intro to Computer Science</p>
         <p>Algorithms, data structures, memory, and problem solving in C and Python.</p>
       </article>
 
       <article class="edu-card reveal">
-        <div class="edu-logo">🐍</div>
+        <div class="edu-top">
+          <div class="edu-logo">🐍</div>
+          <span class="edu-chip">Completed</span>
+        </div>
         <h3>CS50P</h3>
-        <p class="edu-school">Harvard University — Introduction to Programming with Python</p>
+        <p class="edu-school">Harvard University — Intro to Programming with Python</p>
         <p>Python fundamentals, libraries, testing, and building real command-line tools.</p>
       </article>
 
       <article class="edu-card reveal">
-        <div class="edu-logo">🌐</div>
+        <div class="edu-top">
+          <div class="edu-logo">🌐</div>
+          <span class="edu-chip">Completed</span>
+        </div>
         <h3>CS50W</h3>
         <p class="edu-school">Harvard University — Web Programming with Python &amp; JavaScript</p>
         <p>Full-stack web development: HTML, CSS, JavaScript, Django, SQL, and deployment.</p>
@@ -247,8 +334,8 @@
 <section id="contact" class="section section-alt">
   <div class="container">
     <div class="section-head reveal">
-      <p class="section-eyebrow">Contact</p>
-      <h2>Let's Build Something</h2>
+      <p class="section-eyebrow">// contact</p>
+      <h2>Let's Build <span class="grad-text">Something</span></h2>
       <p class="section-sub">I'm open to freelance work, collaborations, and interesting problems.</p>
     </div>
 
@@ -256,13 +343,18 @@
       <div class="contact-info">
         <h3>Shaswot Gautam</h3>
         <p>Full-Stack Software Engineer &amp; App Developer</p>
-        <a class="contact-email" href="mailto:mrgautam2026@gmail.com">mrgautam2026@gmail.com</a>
+        <div class="contact-email-row">
+          <a class="contact-email" href="mailto:mrgautam2026@gmail.com">mrgautam2026@gmail.com</a>
+          <button class="copy-btn" id="copyEmail" aria-label="Copy email address" title="Copy email">⧉</button>
+        </div>
         <div class="contact-socials">
           <a href="https://github.com/mrshasxx1" target="_blank" rel="noopener" class="social-icon" aria-label="GitHub">GitHub</a>
           <a href="https://www.linkedin.com/in/mr-shashwat-84a60b40b/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">LinkedIn</a>
         </div>
       </div>
-      <a href="mailto:mrgautam2026@gmail.com" class="btn btn-primary btn-lg">📧 Email Me</a>
+      <div class="contact-actions">
+        <a href="mailto:mrgautam2026@gmail.com" class="btn btn-primary btn-lg">📧 Email Me</a>
+      </div>
     </div>
   </div>
 </section>
@@ -270,12 +362,15 @@
 <!-- ================= FOOTER ================= -->
 <footer>
   <div class="container">
-    <p>© <span id="year"></span> Shaswot Gautam. Built with <span class="grad-text">♥</span> — C, Python, JavaScript &amp; a lot of coffee.</p>
+    <p>© <span id="year"></span> Shaswot Gautam · Built with <span class="grad-text">♥</span>, C, Python, JavaScript &amp; a lot of coffee.</p>
   </div>
 </footer>
 
 <!-- Back to top -->
 <button id="backToTop" class="back-to-top" aria-label="Back to top">↑</button>
+
+<!-- Toast for copy feedback -->
+<div class="toast" id="toast" role="status" aria-live="polite">📋 Email copied!</div>
 
 <script src="script.js"></script>
 </body>
