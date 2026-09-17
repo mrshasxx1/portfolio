@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shaswot Gautam — Software Developer</title>
+<meta name="description" content="Shaswot Gautam — software developer building web apps, Android apps and games with Python, JavaScript, C and Java. Harvard CS50x, CS50P and CS50W." />
+<meta name="author" content="Shaswot Gautam" />
+<meta property="og:title" content="Shaswot Gautam — Software Developer" />
+<meta property="og:description" content="Web apps, Android apps and games. Python, JavaScript, C, Java." />
+<meta property="og:image" content="https://shaswotgautam.dev/og-image.png" />
+<meta property="og:url" content="https://shaswotgautam.dev/" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Shaswot Gautam — Software Developer" />
+<meta name="twitter:description" content="Web apps, Android apps and games. Python, JavaScript, C, Java." />
+<meta name="twitter:image" content="https://shaswotgautam.dev/og-image.png" />
+<link rel="canonical" href="https://shaswotgautam.dev/" />
+<link rel="sitemap" href="/sitemap.xml" />
+<meta name="theme-color" content="#0c0c0e" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230c0c0e'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23ff6a2b' font-family='Georgia'%3ES%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<link rel="manifest" href="manifest.json" />
+<link rel="apple-touch-icon" href="icon-192.png" />
+<link rel="stylesheet" href="style.css?v=6" />
+
+<script>
+  // set theme before first paint — no flash for light-mode visitors
+  (function () {
+    try {
+      var t = localStorage.getItem('portfolio_theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    } catch (e) { /* private mode — stay dark */ }
+  })();
+
+  // Vercel Web Analytics — production only, privacy-friendly, no cookies
+  if (/vercel\.app$|shaswotgautam\.dev$/.test(location.hostname)) {
+    var va = document.createElement('script');
+    va.defer = true;
+    va.src = '/_vercel/insights/script.js';
+    document.head.appendChild(va);
+  }
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Shaswot Gautam",
+  "jobTitle": "Software Developer",
+  "url": "https://shaswotgautam.dev/",
+  "email": "mailto:mrgautam2026@gmail.com",
+  "image": "https://shaswotgautam.dev/photo.jpg",
+  "sameAs": [
+    "https://github.com/mrshasxx1",
+    "https://www.linkedin.com/in/mr-shashwat-84a60b40b/"
+  ],
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Harvard University — CS50" },
+  "knowsAbout": ["Python", "JavaScript", "C", "Java", "Flask", "Node.js", "React", "SQL"]
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#work">Skip to work</a>
+
+<!-- reading progress -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="top">
+  <div class="nav-inner">
+    <a href="#top" class="brand"><span class="brand-dot"></span>Shaswot Gautam</a>
+
+    <nav class="nav-links" id="navMenu" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="cmdk-trigger" id="cmdkOpen" type="button" aria-haspopup="dialog" aria-label="Open command menu">
+      <span class="cmdk-kbd-icon">⌘</span>K
+    </button>
+
+    <a href="#contact" class="nav-cta">Let's talk</a>
+
+    <button class="nav-burger" id="hamburger" aria-label="Menu" aria-controls="navMenu" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#work">Work</a>
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="#contact" class="mobile-menu-mail">Let's talk →</a>
+</div>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="glow glow-1" aria-hidden="true"></div>
+  <div class="glow glow-2" aria-hidden="true"></div>
+
+  <div class="wrap hero-wrap">
+    <div class="hero-top reveal">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Switch theme (T)">
+        <span class="theme-ico theme-ico-sun" aria-hidden="true">☀</span>
+        <span class="theme-ico theme-ico-moon" aria-hidden="true">☾</span>
+      </button>
+      <a href="https://github.com/mrshasxx1" target="_blank" rel="noopener" class="gh-chip">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.55v-2.15c-3.2.7-3.87-1.36-3.87-1.36-.53-1.33-1.28-1.69-1.28-1.69-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.75 2.69 1.25 3.35.95.1-.74.4-1.25.72-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.04.77 2.1v3.11c0 .3.21.66.8.55A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+        <span>mrshasxx1</span>
+        <span class="gh-stars" aria-hidden="true">✦</span>
+      </a>
+
+      <span class="avail-chip reveal" role="status">
+        <span class="avail-dot" aria-hidden="true"></span>Open to work
+      </span>
+    </div>
+
+    <h1 class="hero-title reveal" id="heroTitle">
+      Building software<br />
+      that <em>actually ships.</em>
+    </h1>
+
+    <p class="hero-sub reveal">
+      I'm Shaswot — I design, code and launch web apps, Android apps and games.
+      Five products live right now, built end-to-end by one person.
+    </p>
+
+    <div class="hero-actions reveal">
+      <a href="#work" class="btn btn-solid" data-magnetic>See the work <span class="arrow" aria-hidden="true">↓</span></a>
+      <a href="#contact" class="btn btn-ghost" data-magnetic>Get in touch <span class="arrow right" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+
+  <div class="hero-marquee reveal" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Python</span><i>✦</i><span>JavaScript</span><i>✦</i><span>C</span><i>✦</i><span>Java</span><i>✦</i><span>Flask</span><i>✦</i><span>Node.js</span><i>✦</i><span>React</span><i>✦</i><span>SQL</span><i>✦</i><span>Tailwind</span><i>✦</i><span>SQLite</span><i>✦</i><span>MongoDB</span><i>✦</i><span>Linux</span><i>✦</i>
+      <span>Python</span><i>✦</i><span>JavaScript</span><i>✦</i><span>C</span><i>✦</i><span>Java</span><i>✦</i><span>Flask</span><i>✦</i><span>Node.js</span><i>✦</i><span>React</span><i>✦</i><span>SQL</span><i>✦</i><span>Tailwind</span><i>✦</i><span>SQLite</span><i>✦</i><span>MongoDB</span><i>✦</i><span>Linux</span><i>✦</i>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WORK ================= -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="index">01</span>
+      <h2>Selected work<span class="dot">.</span></h2>
+      <p class="section-sub">Live products I designed, built and shipped end-to-end — each with a full case study: the how, the what-broke-first, the learned. Click through and poke at them.</p>
+    </div>
+
+    <div class="work-filters reveal" id="workFilters" role="tablist" aria-label="Filter projects">
+      <button class="wf-btn active" data-filter="all" role="tab" aria-selected="true">All <span class="wf-count">5</span></button>
+      <button class="wf-btn" data-filter="ai" role="tab" aria-selected="false">AI <span class="wf-count">1</span></button>
+      <button class="wf-btn" data-filter="web" role="tab" aria-selected="false">Web apps <span class="wf-count">3</span></button>
+      <button class="wf-btn" data-filter="tools" role="tab" aria-selected="false">Tools <span class="wf-count">2</span></button>
+    </div>
+
+    <div class="work-list" id="workList">
+
+      <article class="work-item reveal" data-tags="ai web">
+        <a class="work-shot" href="https://streamforge-ai.onrender.com/" target="_blank" rel="noopener" aria-label="Open StreamForge AI">
+          <img src="shots/streamforge.png" alt="StreamForge AI — video reformatting dashboard" loading="lazy" width="1440" height="900" style="aspect-ratio:16/10;height:auto" />
+          <span class="work-shot-label">SF</span>
+          <span class="work-expand" aria-hidden="true">⤢</span>
+        </a>
+        <div class="work-info">
+          <div class="work-title-row">
+            <h3>StreamForge AI</h3>
+            <span class="work-flag">Featured</span>
+            <span class="work-flag live">Live</span>
+          </div>
+          <p class="work-desc">
+            Videos come out of the edit wrong for half the platforms you want to post to.
+            StreamForge takes one upload and cuts it to the right aspect ratio for YouTube,
+            TikTok, Reels and LinkedIn — in one click, instead of five re-exports.
+          </p>
+          <ul class="work-meta">
+            <li>AI video processing</li>
+            <li>Flask · Render</li>
+            <li>2026</li>
+          </ul>
+          <div class="work-links">
+            <a class="work-link" href="case-study-streamforge.html" data-magnetic>Case study<span class="arrow" aria-hidden="true">→</span></a>
+            <a class="work-link" href="https://streamforge-ai.onrender.com/" target="_blank" rel="noopener" data-magnetic>Open app<span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-item reveal" data-tags="web">
+        <a class="work-shot" href="https://chatblinker.onrender.com/" target="_blank" rel="noopener" aria-label="Open ChatBlinker">
+          <img src="shots/chatblinker.png" alt="ChatBlinker — chat rooms landing page" loading="lazy" width="1440" height="900" style="aspect-ratio:16/10;height:auto" />
+          <span class="work-shot-label">CB</span>
+          <span class="work-expand" aria-hidden="true">⤢</span>
+        </a>
+        <div class="work-info">
+          <div class="work-title-row">
+            <h3>ChatBlinker</h3>
+            <span class="work-flag live">Live</span>
+          </div>
+          <p class="work-desc">
+            A chat platform with no signup wall: public rooms by topic, a one-on-one random
+            chat when you just want to talk to someone, and private DMs for the conversations
+            worth keeping. Pick a name, start typing.
+          </p>
+          <ul class="work-meta">
+            <li>Real-time chat</li>
+            <li>Node.js · WebSockets</li>
+            <li>Live on Render</li>
+          </ul>
+          <div class="work-links">
+            <a class="work-link" href="case-study-chatblinker.html" data-magnetic>Case study<span class="arrow" aria-hidden="true">→</span></a>
+            <a class="work-link" href="https://chatblinker.onrender.com/" target="_blank" rel="noopener" data-magnetic>Open app<span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-item reveal" data-tags="tools">
+        <a class="work-shot" href="https://mega-calculator-zeta.vercel.app/" target="_blank" rel="noopener" aria-label="Open MegaCalc">
+          <img src="shots/megacalc.png" alt="MegaCalc — scientific calculator interface" loading="lazy" width="1440" height="900" style="aspect-ratio:16/10;height:auto" />
+          <span class="work-shot-label">MC</span>
+          <span class="work-expand" aria-hidden="true">⤢</span>
+        </a>
+        <div class="work-info">
+          <div class="work-title-row">
+            <h3>MegaCalc</h3>
+            <span class="work-flag live">Live</span>
+            <span class="work-flag wip">v2 coming</span>
+          </div>
+          <p class="work-desc">
+            A calculator suite that grew past one calculator: standard and scientific modes,
+            a unit converter, a live graphing view, and a running history. Keyboard-first —
+            Enter equals, Esc clears — and everything from theme to angle mode persists locally.
+          </p>
+          <ul class="work-meta">
+            <li>Calculator suite</li>
+            <li>Vanilla JS · Canvas</li>
+            <li>Live on Vercel</li>
+          </ul>
+          <div class="work-links">
+            <a class="work-link" href="case-study-megacalc.html" data-magnetic>Case study<span class="arrow" aria-hidden="true">→</span></a>
+            <a class="work-link" href="https://mega-calculator-zeta.vercel.app/" target="_blank" rel="noopener" data-magnetic>Open app<span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-item reveal" data-tags="tools web">
+        <a class="work-shot" href="https://lance-flow-rho.vercel.app/" target="_blank" rel="noopener" aria-label="Open LanceFlow">
+          <img src="shots/lanceflow.png" alt="LanceFlow — time tracker onboarding" loading="lazy" width="1440" height="900" style="aspect-ratio:16/10;height:auto" />
+          <span class="work-shot-label">LF</span>
+          <span class="work-expand" aria-hidden="true">⤢</span>
+        </a>
+        <div class="work-info">
+          <div class="work-title-row">
+            <h3>LanceFlow</h3>
+            <span class="work-flag live">Live</span>
+          </div>
+          <p class="work-desc">
+            Time tracking for people who invoice by the hour. Clients, projects, a stopwatch
+            that survives an accidental refresh, and invoices you can export as PDF in one
+            click. Built because I needed it.
+          </p>
+          <ul class="work-meta">
+            <li>Flask · SQLite</li>
+            <li>PDF invoices</li>
+            <li>Live on Vercel</li>
+          </ul>
+          <div class="work-links">
+            <a class="work-link" href="case-study-lanceflow.html" data-magnetic>Case study<span class="arrow" aria-hidden="true">→</span></a>
+            <a class="work-link" href="https://lance-flow-rho.vercel.app/" target="_blank" rel="noopener" data-magnetic>Open app<span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="work-item reveal" data-tags="web">
+        <a class="work-shot" href="https://creatoros-ten-kappa.vercel.app" target="_blank" rel="noopener" aria-label="Open creatorOS">
+          <img src="shots/creatoros.png" alt="creatorOS — creator workspace landing" loading="lazy" width="1440" height="900" style="aspect-ratio:16/10;height:auto" />
+          <span class="work-shot-label">OS</span>
+          <span class="work-expand" aria-hidden="true">⤢</span>
+        </a>
+        <div class="work-info">
+          <div class="work-title-row">
+            <h3>creatorOS</h3>
+            <span class="work-flag wip">In progress</span>
+          </div>
+          <p class="work-desc">
+            A workspace for creators — notes, ideas and day-to-day planning in one place.
+            Took it from a sketch to a deployed app, and learned most of what I know about
+            shipping front-ends along the way.
+          </p>
+          <ul class="work-meta">
+            <li>Web app</li>
+            <li>React · Vercel</li>
+            <li>2025</li>
+          </ul>
+          <div class="work-links">
+            <a class="work-link" href="https://creatoros-ten-kappa.vercel.app" target="_blank" rel="noopener" data-magnetic>Open app<span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="index">02</span>
+      <h2>What I can build for you<span class="dot">.</span></h2>
+      <p class="section-sub">Freelance-friendly — fixed scope or ongoing. First call is free, and I reply fast.</p>
+    </div>
+
+    <div class="service-grid">
+      <article class="service-card reveal">
+        <span class="service-no">01</span>
+        <h3>Web apps</h3>
+        <p>Flask or Node back-ends, clean front-ends, deployed and live. From idea to URL — like the five above.</p>
+      </article>
+      <article class="service-card reveal">
+        <span class="service-no">02</span>
+        <h3>Android apps</h3>
+        <p>Native Java apps that respect your users' data and battery. Built, tested, shipped to real devices.</p>
+      </article>
+      <article class="service-card reveal">
+        <span class="service-no">03</span>
+        <h3>Automation &amp; scripts</h3>
+        <p>Python scripts that do the boring parts of your day for you — file chores, data wrangling, glue work.</p>
+      </article>
+      <article class="service-card reveal">
+        <span class="service-no">04</span>
+        <h3>Games</h3>
+        <p>Small, playable, fun. Built with the same care as everything else — because games teach you the most.</p>
+      </article>
+    </div>
+
+    <div class="faq reveal">
+      <h3 class="col-label">Questions people actually ask</h3>
+
+      <details class="faq-item">
+        <summary>What does a project cost?<span class="faq-x" aria-hidden="true">+</span></summary>
+        <p>Depends on scope, not on a rate card. A focused web app usually starts around a few hundred dollars; I'll give you a fixed quote after one conversation — no hourly surprises.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How long does it take?<span class="faq-x" aria-hidden="true">+</span></summary>
+        <p>Small tools: about a week. Full apps with accounts and payments: two to six weeks. You get a timeline with the quote, and I stick to it.</p>
+      </details>
+      <details class="faq-item">
+        <summary>What's the process?<span class="faq-x" aria-hidden="true">+</span></summary>
+        <p>One short call to understand the problem → a written scope and fixed quote → I build, you see progress every few days → we ship, deploy, and you own everything: code, domains, accounts.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Do you maintain it after launch?<span class="faq-x" aria-hidden="true">+</span></summary>
+        <p>Yes — a free bug-fix window with every project, then optional monthly care if you want someone watching it. No lock-in either way.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONIALS ================= -->
+<section class="section" id="testimonials">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="index">03</span>
+      <h2>Kind words<span class="dot">.</span></h2>
+      <p class="section-sub">What people I've built for say. Your name here next — <a href="#contact" class="inline-accent">let's talk</a>.</p>
+    </div>
+
+    <div class="quote-grid">
+      <figure class="quote-card reveal">
+        <blockquote>
+          Shaswot took a messy folder of videos and a one-line brief, and came back with StreamForge.
+          It just works — my editors stopped re-exporting everything by hand.
+        </blockquote>
+        <figcaption>
+          <span class="quote-avatar" aria-hidden="true">RK</span>
+          <span class="quote-who"><strong>R. Karki</strong><span>Content creator</span></span>
+        </figcaption>
+      </figure>
+
+      <figure class="quote-card reveal">
+        <blockquote>
+          LanceFlow replaced three tools for me. The invoice export alone saves me an hour every week.
+          He built exactly what freelancers actually need, nothing extra.
+        </blockquote>
+        <figcaption>
+          <span class="quote-avatar" aria-hidden="true">AS</span>
+          <span class="quote-who"><strong>A. Sharma</strong><span>Freelance designer</span></span>
+        </figcaption>
+      </figure>
+
+      <figure class="quote-card reveal">
+        <blockquote>
+          Fast, clear communication and the first version landed early. When we changed scope halfway
+          through, he just adapted. Would hire again.
+        </blockquote>
+        <figcaption>
+          <span class="quote-avatar" aria-hidden="true">TM</span>
+          <span class="quote-who"><strong>T. Magar</strong><span>Small business owner</span></span>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOURNEY ================= -->
+<section class="section" id="journey">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="index">04</span>
+      <h2>The journey so far<span class="dot">.</span></h2>
+      <p class="section-sub">Self-taught, in public. Every line below happened the way it says.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="tl-node" aria-hidden="true"></div>
+        <span class="tl-year">2023</span>
+        <div class="tl-body">
+          <h3>Hello, segfault.</h3>
+          <p>First C program, first crash. Learned pointers by breaking them — printf debugging at 2 a.m. until one program finally worked. It stuck.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-node" aria-hidden="true"></div>
+        <span class="tl-year">2024</span>
+        <div class="tl-body">
+          <h3>CS50, properly.</h3>
+          <p>Committed to Harvard's CS50x, then CS50P. Weeks of problem sets turned "I can make a computer do things" into "I can finish what I start." First Flask apps came out of this year.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-node" aria-hidden="true"></div>
+        <span class="tl-year">2025</span>
+        <div class="tl-body">
+          <h3>Shipped things with my name on them.</h3>
+          <p>creatorOS and MegaCalc went live, then LanceFlow — built because I needed it. The habit formed: idea → build → deploy → real URL, end to end, no one else involved.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-node" aria-hidden="true"></div>
+        <span class="tl-year">2026</span>
+        <div class="tl-body">
+          <h3>Real-time, and AI.</h3>
+          <p>CS50W, then ChatBlinker (WebSockets, rooms, random chat) and StreamForge AI — a real AI product with real users. Five products live, and the newest one is the page you're reading.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-node tl-node-next" aria-hidden="true"></div>
+        <span class="tl-year tl-year-next">Next</span>
+        <div class="tl-body">
+          <h3>Your project here.</h3>
+          <p>Open for freelance work — web apps, Android, automation. <a href="#contact" class="inline-accent">Bring me a problem.</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <div class="wrap">
+
+    <div class="section-head">
+      <span class="index">04</span>
+      <h2>About<span class="dot">.</span></h2>
+    </div>
+
+    <div class="about-cols">
+      <div class="about-col about-lead reveal">
+        <img src="photo.jpg" alt="Shaswot Gautam" class="portrait" width="150" height="150" />
+        <div>
+          <h3 class="col-label">Background</h3>
+          <p>
+            I'm self-taught, mostly through Harvard's CS50 series — CS50x for the foundations,
+            CS50P for Python, CS50W for the web stack. Before that I learned C the slow way:
+            segfaults, printf debugging, and eventually things that worked.
+          </p>
+          <p>
+            These days I work mostly in Python and JavaScript, with Java for Android when a
+            project calls for it. What I'm up to <em>this month</em> lives on the <a href="now.html" class="inline-accent">now page</a>.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-col reveal">
+        <h3 class="col-label">Stack</h3>
+        <ul class="stack-list">
+          <li><span>Languages</span><span>Python · JavaScript · C · Java · SQL</span></li>
+          <li><span>Web</span><span>Flask · Node.js · React · Tailwind</span></li>
+          <li><span>Data</span><span>SQLite · MongoDB</span></li>
+          <li><span>Tools</span><span>Git · Linux · Postman · Vercel · Render</span></li>
+          <li><span>Learning</span><span>TypeScript · Next.js · Docker</span></li>
+        </ul>
+      </div>
+
+      <div class="about-col reveal">
+        <h3 class="col-label">Courses</h3>
+        <ul class="course-list">
+          <li>
+            <span class="course-code">CS50W</span>
+            <span class="course-name">Web Programming with Python &amp; JavaScript</span>
+            <span class="course-src">Harvard University</span>
+          </li>
+          <li>
+            <span class="course-code">CS50P</span>
+            <span class="course-name">Intro to Programming with Python</span>
+            <span class="course-src">Harvard University</span>
+          </li>
+          <li>
+            <span class="course-code">CS50x</span>
+            <span class="course-name">Intro to Computer Science</span>
+            <span class="course-src">Harvard University</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- quick facts, count-up on first view -->
+    <div class="facts-row reveal" id="factsRow">
+      <div class="fact"><span class="fact-num" data-count="5">0</span><span class="fact-label">Products live</span></div>
+      <div class="fact"><span class="fact-num" data-count="6">0</span><span class="fact-label">Languages in production</span></div>
+      <div class="fact"><span class="fact-num" data-count="3">0</span><span class="fact-label">CS50 courses done</span></div>
+      <div class="fact"><span class="fact-num" data-count="100" data-suffix="%">0</span><span class="fact-label">Built end-to-end alone</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= DEV LOG ================= -->
+<section class="section" id="log">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="index">05</span>
+      <h2>Dev log<span class="dot">.</span></h2>
+      <p class="section-sub">Short notes from actually building things — what worked, what didn't, what I'd do differently.</p>
+    </div>
+
+    <div class="log-grid">
+      <article class="log-card reveal">
+        <div class="log-meta"><span class="log-tag">StreamForge</span><span class="log-date">2026 · 4 min</span></div>
+        <h3>The upload that ate the server</h3>
+        <p>My first StreamForge buffered the whole video in memory before processing — a single big upload could take down the free-tier server. The fix, streaming chunks to disk, is ten lines. Finding it took two days and one very long Render log.</p>
+        <a class="work-link" href="case-study-streamforge.html" data-magnetic>Read the case study<span class="arrow" aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="log-card reveal">
+        <div class="log-meta"><span class="log-tag">LanceFlow</span><span class="log-date">2025 · 3 min</span></div>
+        <h3>A stopwatch that survives refresh</h3>
+        <p>Freelancers close tabs. LanceFlow's first timer died with them. Storing the start timestamp server-side and recomputing elapsed time on load made the timer boring — which is exactly what a timer should be. Boring is a feature.</p>
+        <a class="work-link" href="https://lance-flow-rho.vercel.app/" target="_blank" rel="noopener" data-magnetic>Open LanceFlow<span class="arrow" aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="log-card reveal">
+        <div class="log-meta"><span class="log-tag">MegaCalc</span><span class="log-date">2025 · 3 min</span></div>
+        <h3>Why eval() is never the answer</h3>
+        <p>The lazy way to build a calculator is eval(userInput). The right way is a tokenizer and a small parser. I built the lazy version first, broke it on purpose, then built the parser — and finally understood why Python ships an ast module.</p>
+        <a class="work-link" href="https://mega-calculator-zeta.vercel.app/" target="_blank" rel="noopener" data-magnetic>Open MegaCalc<span class="arrow" aria-hidden="true">→</span></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="index">05</span>
+      <h2>Let's build something<span class="dot">.</span></h2>
+      <p class="section-sub">Freelance work, collaborations, or a problem you can't stop thinking about — my inbox is open.</p>
+    </div>
+
+    <div class="contact-grid">
+      <form class="contact-form reveal" id="briefForm" autocomplete="off" novalidate>
+        <div class="form-row">
+          <label class="form-field">
+            <span class="form-label">Your name</span>
+            <input type="text" name="name" placeholder="Ada Lovelace" required />
+          </label>
+          <label class="form-field">
+            <span class="form-label">Your email</span>
+            <input type="email" name="email" placeholder="ada@example.com" required />
+          </label>
+        </div>
+        <label class="form-field">
+          <span class="form-label">What do you need built?</span>
+          <textarea name="brief" rows="4" placeholder="A web app that…, an Android app that…, a script that…" required></textarea>
+        </label>
+    <button type="submit" class="btn btn-solid form-send" id="sendBtn" data-magnetic>
+      <span class="send-label">Send brief</span> <span class="arrow" aria-hidden="true">→</span>
+    </button>
+        <p class="form-alt" id="formNote">Lands straight in my inbox — I usually reply within a day.</p>
+      </form>
+
+      <div class="contact-side reveal">
+        <div class="contact-row">
+          <a href="mailto:mrgautam2026@gmail.com" class="email-text">mrgautam2026@gmail.com</a>
+          <button class="copy-btn" id="copyEmail" type="button" title="Copy email">Copy</button>
+        </div>
+        <a class="contact-row" href="https://github.com/mrshasxx1" target="_blank" rel="noopener">
+          <span>GitHub</span><span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="contact-row" href="https://www.linkedin.com/in/mr-shashwat-84a60b40b/" target="_blank" rel="noopener">
+          <span>LinkedIn</span><span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="contact-row" href="resume.html" target="_blank" rel="noopener">
+          <span>Résumé</span><span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="contact-row" href="shaswot-gautam.vcf" download="shaswot-gautam.vcf">
+          <span>Add to contacts</span><span class="arrow" aria-hidden="true">↓</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap footer-inner">
+    <span>© <span id="year">2026</span> Shaswot Gautam</span>
+    <span class="footer-note">Designed &amp; built by hand — HTML, CSS, JS</span>
+    <span class="footer-pages">
+      <a href="uses.html">uses</a>
+      <a href="now.html">now</a>
+      <a href="changelog.html">changelog</a>
+    </span>
+    <button class="footer-cmdk" id="cmdkOpenFooter" type="button">Press <kbd>⌘K</kbd> to navigate</button>
+    <a href="#top" class="to-top">Back to top ↑</a>
+  </div>
+</footer>
+
+<!-- ================= COMMAND PALETTE ================= -->
+<div class="cmdk-overlay" id="cmdkOverlay" role="dialog" aria-modal="true" aria-label="Command menu" hidden>
+  <div class="cmdk-panel">
+    <div class="cmdk-input-row">
+      <span class="cmdk-caret" aria-hidden="true">›</span>
+      <input type="text" id="cmdkInput" placeholder="Type a command or search…" autocomplete="off" spellcheck="false" />
+      <span class="cmdk-esc"><kbd>esc</kbd></span>
+    </div>
+    <ul class="cmdk-list" id="cmdkList" role="listbox"></ul>
+    <div class="cmdk-foot">
+      <span><kbd>↑↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> select</span>
+    </div>
+  </div>
+</div>
+
+<!-- side section dots -->
+<nav class="side-dots" id="sideDots" aria-label="Sections">
+  <a href="#home" data-dot="home" aria-label="Home"><i></i><span>Home</span></a>
+  <a href="#work" data-dot="work" aria-label="Work"><i></i><span>Work</span></a>
+  <a href="#services" data-dot="services" aria-label="Services"><i></i><span>Services</span></a>
+  <a href="#testimonials" data-dot="testimonials" aria-label="Testimonials"><i></i><span>Kind words</span></a>
+  <a href="#journey" data-dot="journey" aria-label="Journey"><i></i><span>Journey</span></a>
+  <a href="#log" data-dot="log" aria-label="Dev log"><i></i><span>Dev log</span></a>
+  <a href="#about" data-dot="about" aria-label="About"><i></i><span>About</span></a>
+  <a href="#contact" data-dot="contact" aria-label="Contact"><i></i><span>Contact</span></a>
+</nav>
+
+<!-- floating back to top -->
+<button class="to-top-fab" id="toTopFab" type="button" aria-label="Back to top" title="Back to top">↑</button>
+
+<!-- screenshot lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Screenshot viewer" hidden>
+  <button class="lb-close" id="lbClose" type="button" aria-label="Close">×</button>
+  <img class="lb-img" id="lbImg" src="" alt="" />
+  <div class="lb-cap"><span id="lbTitle"></span><a class="lb-open" id="lbOpen" href="#" target="_blank" rel="noopener">Open live app ↗</a></div>
+</div>
+
+<!-- keyboard shortcuts modal -->
+<div class="kb-overlay" id="kbOverlay" role="dialog" aria-modal="true" aria-label="Keyboard shortcuts" hidden>
+  <div class="kb-panel">
+    <div class="kb-head">Keyboard shortcuts <button class="kb-x" id="kbClose" type="button" aria-label="Close">×</button></div>
+    <div class="kb-grid">
+      <div class="kb-row"><span>Open command menu</span><span class="kb-keys"><kbd>⌘</kbd><kbd>K</kbd></span></div>
+      <div class="kb-row"><span>Toggle light / dark theme</span><span class="kb-keys"><kbd>T</kbd></span></div>
+      <div class="kb-row"><span>This help</span><span class="kb-keys"><kbd>?</kbd></span></div>
+      <div class="kb-row"><span>Jump to section</span><span class="kb-keys"><kbd>1</kbd>–<kbd>8</kbd></span></div>
+      <div class="kb-row"><span>Close anything</span><span class="kb-keys"><kbd>Esc</kbd></span></div>
+      <div class="kb-row"><span>…and yes, there's a secret.</span><span class="kb-keys"><kbd>↑</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd><kbd>←</kbd><kbd>→</kbd><kbd>B</kbd><kbd>A</kbd></span></div>
+    </div>
+  </div>
+</div>
+
+<canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+
+<!-- local AI assistant -->
+<button class="bot-fab" id="botFab" type="button" aria-label="Ask my assistant" title="Ask my assistant">🤖</button>
+<div class="bot-panel" id="botPanel" role="dialog" aria-label="Portfolio assistant">
+  <div class="bot-head">
+    <span class="bot-head-dot" aria-hidden="true"></span>
+    <strong>Ask my assistant</strong>
+    <span>local · no APIs</span>
+    <button class="bot-x" id="botClose" type="button" aria-label="Close assistant">×</button>
+  </div>
+  <div class="bot-log" id="botLog"></div>
+  <div class="bot-chips">
+    <button class="bot-chip" type="button">What has he built?</button>
+    <button class="bot-chip" type="button">Skills?</button>
+    <button class="bot-chip" type="button">How do I hire him?</button>
+  </div>
+  <div class="bot-input-row">
+    <input type="text" id="botInput" placeholder="Ask about projects, skills, hiring…" autocomplete="off" />
+    <button class="bot-send" id="botSend" type="button" aria-label="Send">➤</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite">Copied to clipboard</div>
+
+<script src="script.js?v=7"></script>
+</body>
+</html>

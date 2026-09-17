@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>StreamForge AI — Case Study · Shaswot Gautam</title>
+<meta name="description" content="How StreamForge AI turns one video upload into platform-perfect cuts for YouTube, TikTok, Reels and LinkedIn — the problem, the build, and what I learned shipping it." />
+<meta property="og:title" content="StreamForge AI — Case Study" />
+<meta property="og:description" content="One upload in, four platform-perfect cuts out. The problem, the build, the learnings." />
+<meta name="theme-color" content="#0c0c0e" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230c0c0e'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23ff6a2b' font-family='Georgia'%3ES%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css?v=6" />
+
+</head>
+<body class="case-page">
+
+<header class="nav" id="top">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="brand-dot"></span>Shaswot Gautam</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+</nav>
+    <a href="index.html#contact" class="nav-cta">Let's talk</a>
+  </div>
+</header>
+
+<main>
+  <article class="case-wrap">
+
+    <header class="case-hero">
+      <a href="index.html#work" class="case-back">← All work</a>
+      <span class="case-kicker mono-label">Case study · 2026</span>
+      <h1>StreamForge <em>AI.</em></h1>
+      <p class="case-dek">
+        One upload in, four platform-perfect cuts out. StreamForge kills the
+        re-export treadmill for creators who post everywhere.
+      </p>
+      <div class="case-facts">
+        <div><span class="mono-label">Role</span><strong>Design, build, deploy — solo</strong></div>
+        <div><span class="mono-label">Stack</span><strong>Flask · Python · Render</strong></div>
+        <div><span class="mono-label">Status</span><strong>Live in production</strong></div>
+        <div><span class="mono-label">Timeline</span><strong>Built in 3 weeks</strong></div>
+      </div>
+    </div>
+    </header>
+
+    <figure class="case-shot">
+      <img src="shots/streamforge.png" alt="StreamForge AI dashboard" width="1440" height="900" style="aspect-ratio:16/10;height:auto" />
+      <figcaption>One upload in — platform-ready cuts out.</figcaption>
+      <a class="btn btn-solid case-cta" href="https://streamforge-ai.onrender.com/" target="_blank" rel="noopener">Open StreamForge <span class="arrow">→</span></a>
+    </figure>
+
+    <section class="case-body">
+      <h2>The problem</h2>
+      <p>
+        Making a video is one job. Posting it is five. YouTube wants 16:9, TikTok and Reels
+        want 9:16, LinkedIn wants square-ish 1:1 — so creators re-export the same cut four
+        times, eyeball the crops, and re-upload. For anyone posting daily, that's hours a
+        week spent on arithmetic a program can do better.
+      </p>
+      <p>
+        The interesting part wasn't cutting video — ffmpeg does that. It was making the
+        <em>right</em> cut: keeping the speaker in frame, keeping captions readable, and
+        making the whole thing one click so it actually gets used.
+      </p>
+
+      <h2>The build</h2>
+      <p>
+        StreamForge is a Flask app with a Python processing pipeline. One upload fans out
+        into per-platform jobs with their own aspect ratio and padding rules; results come
+        back into a queue the user can preview and download from. Heavy lifting happens
+        server-side so a cheap phone can drive the whole thing.
+      </p>
+      <ul class="case-points">
+        <li><strong>Queue-based jobs</strong> — each export is a job with status, so a 10-minute video doesn't hold the browser hostage.</li>
+        <li><strong>Platform presets</strong> — safe margins and crop rules per platform, tuned by hand from real posts.</li>
+        <li><strong>Deployed on Render</strong> — continuous deploys from Git; the free tier survives realistic traffic.</li>
+      </ul>
+
+      <h2>What went wrong first</h2>
+      <p>
+        My first version cropped from center and decapitated half the talking heads I tested
+        with. That taught me the real problem is framing, not trimming — and pushed the
+        product from "video cutter" to "video cutter that doesn't make you re-check every
+        output."
+      </p>
+
+      <h2>What I learned</h2>
+      <p>
+        Shipping solo means being the user, the designer and the support line at once. The
+        parts I'm proudest of aren't the AI bits — they're the boring ones: progress states
+        that never leave you guessing, and outputs that survive contact with real footage.
+      </p>
+      <p>
+        If your team ships video anywhere, I'd love to talk — this is exactly the kind of
+        problem I like taking end-to-end.
+      </p>
+
+      <div class="case-nav">
+        <a class="btn btn-ghost" href="index.html#work">← Back to all work</a>
+        <a class="btn btn-solid" href="index.html#contact">Start a project <span class="arrow">→</span></a>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© <span id="year">2026</span> Shaswot Gautam</span>
+    <span class="footer-note">Designed &amp; built by hand — HTML, CSS, JS</span>
+    <a href="index.html#top" class="to-top">Back to portfolio ↑</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

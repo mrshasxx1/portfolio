@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MegaCalc — Case Study · Shaswot Gautam</title>
+<meta name="description" content="How MegaCalc grew from one calculator into a suite — standard, scientific, unit converter, graphing — without eval(). The problem, the build, what went wrong first." />
+<meta property="og:title" content="MegaCalc — Case Study" />
+<meta property="og:description" content="Four calculators in one, keyboard-first, no eval(). The problem, the build, the learnings." />
+<meta name="theme-color" content="#0c0c0e" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230c0c0e'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23ff6a2b' font-family='Georgia'%3ES%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css?v=6" />
+
+</head>
+<body class="case-page">
+
+<header class="nav" id="top">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="brand-dot"></span>Shaswot Gautam</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a href="index.html#contact" class="nav-cta">Let's talk</a>
+  </div>
+</header>
+
+<main>
+  <article class="case-wrap">
+
+    <header class="case-hero">
+      <a href="index.html#work" class="case-back">← All work</a>
+      <span class="case-kicker mono-label">Case study · 2025</span>
+      <h1>Mega<em>Calc.</em></h1>
+      <p class="case-dek">
+        One calculator that refused to stay one calculator — standard, scientific,
+        unit converter, graphing — all keyboard-first, all local.
+      </p>
+      <div class="case-facts">
+        <div><span class="mono-label">Role</span><strong>Design, build, deploy — solo</strong></div>
+        <div><span class="mono-label">Stack</span><strong>Vanilla JS · Canvas · Vercel</strong></div>
+        <div><span class="mono-label">Status</span><strong>Live, still growing</strong></div>
+        <div><span class="mono-label">Timeline</span><strong>Grown since 2025</strong></div>
+      </div>
+    </header>
+
+    <figure class="case-shot">
+      <img src="shots/megacalc.png" alt="MegaCalc scientific calculator interface" width="1440" height="900" style="aspect-ratio:16/10;height:auto" />
+      <figcaption>Scientific mode — history running down the side, keyboard throughout.</figcaption>
+      <a class="btn btn-solid case-cta" href="https://mega-calculator-zeta.vercel.app/" target="_blank" rel="noopener">Open MegaCalc <span class="arrow">→</span></a>
+    </figure>
+
+    <section class="case-body">
+      <h2>The problem</h2>
+      <p>
+        The calculators that ship with your OS haven't improved in a decade. The web ones
+        are worse — ads everywhere, one button per click, and the moment you need a unit
+        conversion you're off to a different site with three popups.
+      </p>
+      <p>
+        The goal sounds small: <em>one tab, everything computational</em>. Standard and
+        scientific modes, a unit converter, a graph, running history — no ads, no accounts,
+        no waiting. And it had to feel right to a keyboard user: Enter equals, Esc clears.
+      </p>
+
+      <h2>The build</h2>
+      <p>
+        MegaCalc is deliberately vanilla — no framework, no dependencies. The four modes
+        share one expression core; the graph is raw Canvas drawing expressions sampled per
+        pixel column; every preference (theme, angle mode, history) persists to localStorage
+        so the calculator you left is the calculator you return to.
+      </p>
+      <ul class="case-points">
+        <li><strong>A real parser</strong> — expressions run through a tokenizer and shunting-yard evaluator, not <em>eval()</em>. Operator precedence, unary minus, and the classic <em>-3²</em> cases all behave like real math.</li>
+        <li><strong>Canvas graphing</strong> — pan and zoom by dragging; expressions re-sampled per frame, so the graph is as smooth as the buttons.</li>
+        <li><strong>Zero-backend</strong> — everything computes on-device. It works on a plane, and it'll still work in ten years.</li>
+      </ul>
+
+      <h2>What went wrong first</h2>
+      <p>
+        Version one used eval(). It took four lines and broke on everything that matters:
+        <em>0.1+0.2</em> floated wrong, expressions like <em>2(3+4)</em> crashed, and any
+        input was arbitrary code execution waiting to happen. Rebuilding on a tokenizer took
+        three days and taught me more about language design than any tutorial — you can't
+        fake operator precedence; you have to implement it.
+      </p>
+
+      <h2>What I learned</h2>
+      <p>
+        Small tools deserve real engineering. Nobody's impressed by a calculator's feature
+        list — they're impressed when <em>2+2×3</em> comes out as 8 and the thing never
+        lags. Precision, keyboard handling and persistence are the whole product. That
+        mindset — sweat the invisible details — is what I now bring to every project.
+      </p>
+      <p>
+        Need a precise, fast tool built for your users? That's exactly my kind of job.
+      </p>
+
+      <div class="case-nav">
+        <a class="btn btn-ghost" href="index.html#work">← Back to all work</a>
+        <a class="btn btn-solid" href="index.html#contact">Start a project <span class="arrow">→</span></a>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© <span id="year">2026</span> Shaswot Gautam</span>
+    <span class="footer-note">Designed &amp; built by hand — HTML, CSS, JS</span>
+    <a href="index.html#top" class="to-top">Back to portfolio ↑</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

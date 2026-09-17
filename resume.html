@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shaswot Gautam — Résumé</title>
+<style>
+  :root {
+    --ink: #1a1a1c;
+    --muted: #5c5b63;
+    --line: #e2e0da;
+    --accent: #c2410c;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--ink);
+    background: #ece9e2;
+    line-height: 1.55;
+  }
+  .page {
+    max-width: 800px;
+    margin: 32px auto;
+    background: #fff;
+    padding: 56px 64px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+  }
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 20px; margin-bottom: 24px; }
+  h1 { font-size: 2rem; letter-spacing: -0.01em; }
+  .role { color: var(--accent); font-style: italic; margin-top: 2px; }
+  .contact-line { margin-top: 10px; font-size: 0.88rem; color: var(--muted); }
+  .contact-line a { color: inherit; }
+  h2 {
+    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--accent); margin: 26px 0 12px;
+    font-family: Arial, sans-serif;
+  }
+  .item { margin-bottom: 16px; }
+  .item-top { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+  .item h3 { font-size: 1.05rem; }
+  .item .meta { font-size: 0.8rem; color: var(--muted); white-space: nowrap; font-family: Arial, sans-serif; }
+  .item p { font-size: 0.93rem; color: #333; margin-top: 3px; }
+  ul { margin: 6px 0 0 18px; }
+  li { font-size: 0.92rem; margin-bottom: 4px; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip {
+    font-family: Arial, sans-serif; font-size: 0.78rem;
+    border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px;
+  }
+  .no-print {
+    max-width: 800px; margin: 20px auto; text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  .no-print button {
+    background: #1a1a1c; color: #fff; border: 0; border-radius: 999px;
+    padding: 12px 26px; font-size: 0.95rem; cursor: pointer;
+  }
+  .no-print .back { display: inline-block; margin-left: 12px; color: #555; font-size: 0.9rem; }
+  .edu-note { font-size: 0.88rem; color: var(--muted); }
+
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; box-shadow: none; padding: 24px 8px; max-width: none; }
+    .no-print { display: none; }
+    .item, h2 { break-inside: avoid; }
+  }
+  @media (max-width: 640px) {
+    .page { padding: 32px 22px; margin: 0; }
+    .cols { grid-template-columns: 1fr; }
+    .item-top { flex-direction: column; gap: 1px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="no-print">
+  <button onclick="window.print()">Print / Save as PDF</button>
+  <a class="back" href="index.html">← Back to portfolio</a>
+</div>
+
+<div class="page">
+  <header>
+    <h1>Shaswot Gautam</h1>
+    <p class="role">Software Developer — Web · Android · Games</p>
+    <p class="contact-line">
+      <a href="mailto:mrgautam2026@gmail.com">mrgautam2026@gmail.com</a>
+      &nbsp;·&nbsp; <a href="https://github.com/mrshasxx1">github.com/mrshasxx1</a>
+      &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/mr-shashwat-84a60b40b/">LinkedIn</a>
+    </p>
+  </header>
+
+  <h2>Summary</h2>
+  <p style="font-size:0.95rem">
+    Self-taught developer and Harvard CS50x / CS50P / CS50W graduate. I design, build and ship
+    complete products end-to-end — five live web apps so far, spanning AI video processing,
+    real-time chat, developer tooling and freelance invoicing. Comfortable across the stack:
+    Python, JavaScript, C, Java, SQL.
+  </p>
+
+  <h2>Projects — all live in production</h2>
+
+  <div class="item">
+    <div class="item-top">
+      <h3>StreamForge AI — AI video reformatting</h3>
+      <span class="meta">Flask · Render · 2026</span>
+    </div>
+    <p>Built an AI-powered tool that reformats one video upload for YouTube, TikTok, Instagram
+    Reels and LinkedIn with correct aspect ratios, replacing five manual re-exports with one click.
+    <a href="https://streamforge-ai.onrender.com/">streamforge-ai.onrender.com</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-top">
+      <h3>ChatBlinker — real-time chat platform</h3>
+      <span class="meta">Node.js · WebSockets · Render</span>
+    </div>
+    <p>Built and operate a chat platform with public topic rooms, one-on-one random chat and
+    private DMs. No signup required — guests get a name and join instantly.
+    <a href="https://chatblinker.onrender.com/">chatblinker.onrender.com</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-top">
+      <h3>MegaCalc — calculator suite</h3>
+      <span class="meta">Vanilla JS · Canvas · Vercel</span>
+    </div>
+    <p>Designed a keyboard-first calculator suite: standard and scientific modes, unit converter,
+    live function graphing, running history, and settings that persist locally.
+    <a href="https://mega-calculator-zeta.vercel.app/">mega-calculator-zeta.vercel.app</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-top">
+      <h3>LanceFlow — freelance time tracker</h3>
+      <span class="meta">Flask · SQLite · Vercel</span>
+    </div>
+    <p>Built a full-stack time tracker with clients, a reload-proof stopwatch, and one-click
+    PDF invoice export. Built it because I needed it; other freelancers use it now too.
+    <a href="https://lance-flow-rho.vercel.app/">lance-flow-rho.vercel.app</a></p>
+  </div>
+
+  <div class="item">
+    <div class="item-top">
+      <h3>creatorOS — creator workspace</h3>
+      <span class="meta">React · Vercel · 2025</span>
+    </div>
+    <p>Took a creator toolkit from sketch to deployed product — notes, ideas and planning in
+    one workspace. <a href="https://creatoros-ten-kappa.vercel.app">creatoros-ten-kappa.vercel.app</a></p>
+  </div>
+
+  <h2>Skills</h2>
+  <div class="cols">
+    <div>
+      <p><strong>Languages</strong></p>
+      <div class="chips">
+        <span class="chip">Python</span><span class="chip">JavaScript</span><span class="chip">C</span>
+        <span class="chip">Java</span><span class="chip">SQL</span><span class="chip">Bash</span>
+      </div>
+    </div>
+    <div>
+      <p><strong>Frameworks &amp; tools</strong></p>
+      <div class="chips">
+        <span class="chip">Flask</span><span class="chip">Node.js</span><span class="chip">React</span>
+        <span class="chip">Tailwind</span><span class="chip">SQLite</span><span class="chip">MongoDB</span>
+        <span class="chip">Git</span><span class="chip">Linux</span><span class="chip">Vercel</span><span class="chip">Render</span>
+      </div>
+    </div>
+  </div>
+
+  <h2>Education</h2>
+  <div class="item">
+    <div class="item-top">
+      <h3>Harvard University — CS50 series</h3>
+      <span class="meta">Completed</span>
+    </div>
+    <ul>
+      <li><strong>CS50W</strong> — Web Programming with Python &amp; JavaScript</li>
+      <li><strong>CS50P</strong> — Introduction to Programming with Python</li>
+      <li><strong>CS50x</strong> — Introduction to Computer Science</li>
+    </ul>
+    <p class="edu-note">Currently learning: TypeScript, Next.js, Docker.</p>
+  </div>
+</div>
+
+<script>
+  // If opened as "Download CV", jump straight to the print dialog.
+  if (location.hash === '#print') {
+    window.addEventListener('load', () => setTimeout(() => window.print(), 400));
+  }
+</script>
+</body>
+</html>
