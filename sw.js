@@ -2,11 +2,11 @@
    Cache-first shell so the site works offline and loads instantly on repeat visits.
    Screenshots: cache-first (they rarely change). API/external: network only. */
 
-const VERSION = 'v6';
+const VERSION = 'v7';
 const SHELL = [
   '/',
   '/index.html',
-  '/case-study-streamforge.html',
+  '/case-study-clipkitchen.html',
   '/case-study-chatblinker.html',
   '/case-study-megacalc.html',
   '/case-study-lanceflow.html',
@@ -22,7 +22,7 @@ const SHELL = [
   '/og-image.png',
   '/photo.jpg',
   '/shaswot-gautam.vcf',
-  '/shots/streamforge.png',
+  '/shots/clipkitchen.png',
   '/shots/chatblinker.png',
   '/shots/megacalc.png',
   '/shots/lanceflow.png',

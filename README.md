@@ -11,7 +11,7 @@ display type with italic accent moments, glass nav, film grain, and an infinite 
 - **⌘K command palette** — `⌘K` / `Ctrl+K` or the nav button; jump to sections, open any live app or case study, ask the assistant, copy email, download the résumé or vCard, toggle theme. Accent-insensitive search ("resume" finds "résumé"), arrow keys + Enter, Esc to close
 - **AI portfolio assistant** — a tiny local chatbot (zero APIs, zero backend) that answers questions about projects, skills, the journey and hiring; opens from the floating 🤖 button or the ⌘K palette
 - **Journey timeline** — 2023 → 2026 → "your project here", with an animated rail and hover nodes
-- **Dev log** — three short build notes (StreamForge, LanceFlow, MegaCalc) linking to the case study and live apps
+- **Dev log** — three short build notes (Clip Kitchen, LanceFlow, MegaCalc) linking to the case study and live apps
 - **Light / dark theme** — toggle button in the hero, `T` keyboard shortcut, palette command; persisted in `localStorage`, respects `prefers-color-scheme`, applied pre-paint (no flash)
 - **Keyboard shortcuts** — `?` opens a shortcuts modal; `1`–`8` jump to sections; `Esc` closes anything
 - **Work filters** — All / AI / Web apps / Tools tabs over the five projects
@@ -33,8 +33,8 @@ display type with italic accent moments, glass nav, film grain, and an infinite 
 ## Sections
 
 - **Hero** — big serif headline with an italic accent line, GitHub chip, call-to-actions, infinite tech marquee
-- **Work** — five shipped projects with live screenshots (in `shots/`), status badges, and a full case study each (build, what broke first, learnings). The flagship (StreamForge AI) started the format:
-  - **StreamForge AI** — AI video reformatting for every social platform (Render)
+- **Work** — five shipped projects with live screenshots (in `shots/`), status badges, and a full case study each (build, what broke first, learnings). The flagship (Clip Kitchen) started the format:
+  - **Clip Kitchen** — AI video reformatting for every social platform (Render)
   - **ChatBlinker** — public chat rooms, random 1-on-1 chat, private DMs (Render)
   - **MegaCalc** — standard/scientific calculator suite with unit converter, graphing and history (Vercel)
   - **LanceFlow** — freelance time tracker with PDF invoicing (Vercel)

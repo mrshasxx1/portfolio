@@ -396,9 +396,9 @@ document.addEventListener('DOMContentLoaded', () => {
       { re: /\b(hire|freelance|available|open to|price|cost|rate|charge|budget|how much)\b/, a: () =>
         'He\u2019s <b>open to freelance work</b> — web apps, Android apps, automation, games. Fixed quote after one conversation, no hourly surprises; small tools usually start around a few hundred dollars. ' + mail },
       { re: /\b(projects?|portfolio|work|apps?|built|made|products?)\b/, a: () =>
-        'Five products, all live right now: <b>StreamForge AI</b> (video reformatting), <b>ChatBlinker</b> (real-time chat), <b>MegaCalc</b> (calculator suite), <b>LanceFlow</b> (freelance time-tracking) and <b>creatorOS</b>. Which one should I introduce?' },
-      { re: /streamforge|stream|video|reels|tiktok/, a: () =>
-        '<b>StreamForge AI</b> takes one video upload and cuts it to the right format for YouTube, TikTok, Reels and LinkedIn — one click instead of five re-exports. Flask + AI, live at ' + appLink('https://streamforge-ai.onrender.com/') + '. There\u2019s a full ' + a('case-study-streamforge.html', 'case study') + ' too.' },
+        'Five products, all live right now: <b>Clip Kitchen</b> (video reformatting), <b>ChatBlinker</b> (real-time chat), <b>MegaCalc</b> (calculator suite), <b>LanceFlow</b> (freelance time-tracking) and <b>creatorOS</b>. Which one should I introduce?' },
+      { re: /clip.?kitchen|streamforge|stream|video|reels|tiktok/, a: () =>
+        '<b>Clip Kitchen</b> takes one video upload and cuts it to the right format for YouTube, TikTok, Reels and LinkedIn — one click instead of five re-exports. Flask + AI, live at ' + appLink('https://streamforge-ai.onrender.com/') + '. There\u2019s a full ' + a('case-study-clipkitchen.html', 'case study') + ' too.' },
       { re: /chatblinker|chat(?!bot)|room|random chat/, a: () =>
         '<b>ChatBlinker</b> is a no-signup chat platform — public rooms, random 1-on-1 chat, private DMs. Real-time over WebSockets. Pick a name and try it: ' + appLink('https://chatblinker.onrender.com/') },
       { re: /megacalc|mega calc|calculator/, a: () =>
@@ -504,7 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const COMMANDS = [
     { label: 'Home', hint: 'go', ico: 'H', action: () => scrollOrJump('#home') },
     { label: 'Selected work', hint: 'go', ico: '01', action: () => scrollOrJump('#work') },
-    { label: 'StreamForge AI', hint: 'app', ico: 'SF', action: () => window.open('https://streamforge-ai.onrender.com/', '_blank') },
+    { label: 'Clip Kitchen', hint: 'app', ico: 'CK', action: () => window.open('https://streamforge-ai.onrender.com/', '_blank') },
     { label: 'ChatBlinker', hint: 'app', ico: 'CB', action: () => window.open('https://chatblinker.onrender.com/', '_blank') },
     { label: 'MegaCalc', hint: 'app', ico: 'MC', action: () => window.open('https://mega-calculator-zeta.vercel.app/', '_blank') },
     { label: 'LanceFlow', hint: 'app', ico: 'LF', action: () => window.open('https://lance-flow-rho.vercel.app/', '_blank') },
@@ -520,7 +520,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
         applyTheme(next, true);
       } },
-    { label: 'StreamForge AI case study', hint: 'read', ico: 'CS', action: () => window.open('case-study-streamforge.html', '_blank') },
+    { label: 'Clip Kitchen case study', hint: 'read', ico: 'CS', action: () => window.open('case-study-clipkitchen.html', '_blank') },
     { label: 'ChatBlinker case study', hint: 'read', ico: 'CS', action: () => window.open('case-study-chatblinker.html', '_blank') },
     { label: 'MegaCalc case study', hint: 'read', ico: 'CS', action: () => window.open('case-study-megacalc.html', '_blank') },
     { label: 'LanceFlow case study', hint: 'read', ico: 'CS', action: () => window.open('case-study-lanceflow.html', '_blank') },
