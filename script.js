@@ -396,7 +396,9 @@ document.addEventListener('DOMContentLoaded', () => {
       { re: /\b(hire|freelance|available|open to|price|cost|rate|charge|budget|how much)\b/, a: () =>
         'He\u2019s <b>open to freelance work</b> — web apps, Android apps, automation, games. Fixed quote after one conversation, no hourly surprises; small tools usually start around a few hundred dollars. ' + mail },
       { re: /\b(projects?|portfolio|work|apps?|built|made|products?)\b/, a: () =>
-        'Five products, all live right now: <b>Clip Kitchen</b> (video reformatting), <b>ChatBlinker</b> (real-time chat), <b>MegaCalc</b> (calculator suite), <b>LanceFlow</b> (freelance time-tracking) and <b>creatorOS</b>. Which one should I introduce?' },
+        'Six products, all live right now: <b>Clip Kitchen</b> (video reformatting), <b>ChatBlinker</b> (real-time chat), <b>MegaCalc</b> (calculator suite), <b>LanceFlow</b> (freelance time-tracking), <b>Nepali Daily Guide</b> (rashifal + panchang) and <b>creatorOS</b>. Which one should I introduce?' },
+      { re: /nepali|daily guide|rashifal|rasi|panchang|patro|horoscope|festival|base44/, a: () =>
+        '<b>Nepali Daily Guide</b> is a daily companion for Nepal — Bikram Sambat date, panchang, rashifal and upcoming festivals, in Nepali, on one page. Built with Base44: ' + appLink('https://nepali-daily-guide.base44.app/') },
       { re: /clip.?kitchen|streamforge|stream|video|reels|tiktok/, a: () =>
         '<b>Clip Kitchen</b> takes one video upload and cuts it to the right format for YouTube, TikTok, Reels and LinkedIn — one click instead of five re-exports. Flask + AI, live at ' + appLink('https://clip-kitchen.onrender.com/') + '. There\u2019s a full ' + a('case-study-clipkitchen.html', 'case study') + ' too.' },
       { re: /chatblinker|chat(?!bot)|room|random chat/, a: () =>
