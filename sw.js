@@ -2,7 +2,7 @@
    Cache-first shell so the site works offline and loads instantly on repeat visits.
    Screenshots: cache-first (they rarely change). API/external: network only. */
 
-const VERSION = 'v7';
+const VERSION = 'v8';
 const SHELL = [
   '/',
   '/index.html',
@@ -10,6 +10,7 @@ const SHELL = [
   '/case-study-chatblinker.html',
   '/case-study-megacalc.html',
   '/case-study-lanceflow.html',
+  '/case-study-localforge.html',
   '/uses.html',
   '/now.html',
   '/changelog.html',
@@ -26,7 +27,9 @@ const SHELL = [
   '/shots/chatblinker.png',
   '/shots/megacalc.png',
   '/shots/lanceflow.png',
-  '/shots/creatoros.png'
+  '/shots/creatoros.png',
+  '/shots/nepaliguide.png',
+  '/shots/localforge.png'
 ];
 
 self.addEventListener('install', (event) => {

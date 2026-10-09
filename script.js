@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { re: /\b(hire|freelance|available|open to|price|cost|rate|charge|budget|how much)\b/, a: () =>
         'He\u2019s <b>open to freelance work</b> — web apps, Android apps, automation, games. Fixed quote after one conversation, no hourly surprises; small tools usually start around a few hundred dollars. ' + mail },
       { re: /\b(projects?|portfolio|work|apps?|built|made|products?)\b/, a: () =>
-        'Six products, all live right now: <b>Clip Kitchen</b> (video reformatting), <b>ChatBlinker</b> (real-time chat), <b>MegaCalc</b> (calculator suite), <b>LanceFlow</b> (freelance time-tracking), <b>Nepali Daily Guide</b> (rashifal + panchang) and <b>creatorOS</b>. Which one should I introduce?' },
+        'Seven products, all live right now: <b>Clip Kitchen</b> (video reformatting), <b>ChatBlinker</b> (real-time chat), <b>MegaCalc</b> (calculator suite), <b>LanceFlow</b> (freelance time-tracking), <b>Nepali Daily Guide</b> (rashifal + panchang), <b>LocalForge</b> (private in-browser file conversion) and <b>creatorOS</b>. Which one should I introduce?' },
       { re: /nepali|daily guide|rashifal|rasi|panchang|patro|horoscope|festival|base44/, a: () =>
         '<b>Nepali Daily Guide</b> is a daily companion for Nepal — Bikram Sambat date, panchang, rashifal and upcoming festivals, in Nepali, on one page. Built with Base44: ' + appLink('https://nepali-daily-guide.base44.app/') },
       { re: /clip.?kitchen|streamforge|stream|video|reels|tiktok/, a: () =>
@@ -409,6 +409,8 @@ document.addEventListener('DOMContentLoaded', () => {
         '<b>LanceFlow</b> is time-tracking for people who invoice by the hour — clients, projects, a stopwatch that survives refresh, PDF invoices. Built because Shaswot needed it himself. Flask + SQLite: ' + appLink('https://lance-flow-rho.vercel.app/') },
       { re: /creatoros|creator os/, a: () =>
         '<b>creatorOS</b> is a workspace for creators — notes, ideas, planning in one place. React, on Vercel: ' + appLink('https://creatoros-ten-kappa.vercel.app') },
+      { re: /local.?forge|local forge/, a: () =>
+        '<b>LocalForge</b> converts, compresses and merges images, PDFs, audio and video <b>entirely in the browser</b> — nothing is uploaded and there is no backend at all. Zero accounts, zero queues: ' + appLink('https://local-forge-nine.vercel.app/') + ' There\u2019s a ' + a('case-study-localforge.html', 'case study') + ' on how it works.' },
       { re: /\b(skills?|tech|stack|languages?|know|frameworks?)\b/, a: () =>
         'Languages: <b>Python, JavaScript, C, Java, SQL</b>. Web: Flask, Node.js, React, Tailwind. Data: SQLite, MongoDB. Learning: TypeScript, Next.js. The full stack list is in ' + jump('#about', 'About') + '.' },
       { re: /\b(contact|reach|email|mail|touch|message)\b/, a: () =>
@@ -526,6 +528,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { label: 'ChatBlinker case study', hint: 'read', ico: 'CS', action: () => window.open('case-study-chatblinker.html', '_blank') },
     { label: 'MegaCalc case study', hint: 'read', ico: 'CS', action: () => window.open('case-study-megacalc.html', '_blank') },
     { label: 'LanceFlow case study', hint: 'read', ico: 'CS', action: () => window.open('case-study-lanceflow.html', '_blank') },
+    { label: 'LocalForge case study', hint: 'read', ico: 'CS', action: () => window.open('case-study-localforge.html', '_blank') },
     { label: 'Download résumé (PDF)', hint: 'doc', ico: 'CV', action: () => window.open('resume.pdf', '_blank') },
     { label: 'Add me to contacts (vCard)', hint: 'act', ico: 'vC', action: () => {
         const link = document.createElement('a');

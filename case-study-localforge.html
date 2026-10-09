@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LocalForge — Case Study · Shaswot Gautam</title>
+<meta name="description" content="How LocalForge converts images, PDFs, audio and video entirely in the browser — no uploads, no accounts, no server. The problem, the build, what went wrong first." />
+<meta property="og:title" content="LocalForge — Case Study" />
+<meta property="og:description" content="A file workbench with no backend. Everything runs in the tab: the problem, the build, the learnings." />
+<meta name="theme-color" content="#0c0c0e" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230c0c0e'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23ff6a2b' font-family='Georgia'%3ES%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css?v=6" />
+
+</head>
+<body class="case-page">
+
+<header class="nav" id="top">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="brand-dot"></span>Shaswot Gautam</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html#work">Work</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <a href="index.html#contact" class="nav-cta">Let's talk</a>
+  </div>
+</header>
+
+<main>
+  <article class="case-wrap">
+
+    <header class="case-hero">
+      <a href="index.html#work" class="case-back">← All work</a>
+      <span class="case-kicker mono-label">Case study · 2026</span>
+      <h1>Local<em>Forge.</em></h1>
+      <p class="case-dek">
+        A file workbench with no backend. Convert, compress and merge
+        right in the tab — because nobody wants to upload their documents
+        to a stranger's server to resize them.
+      </p>
+      <div class="case-facts">
+        <div><span class="mono-label">Role</span><strong>Design, build, deploy — solo</strong></div>
+        <div><span class="mono-label">Stack</span><strong>Vanilla JS · FFmpeg WASM · Vercel</strong></div>
+        <div><span class="mono-label">Status</span><strong>Live in production</strong></div>
+        <div><span class="mono-label">Files uploaded</span><strong>Zero — by design</strong></div>
+      </div>
+    </header>
+
+    <figure class="case-shot">
+      <img src="shots/localforge.png" alt="LocalForge — private in-browser file conversion workbench" width="1440" height="900" style="aspect-ratio:16/10;height:auto" />
+      <figcaption>Drop files, get the right tool picked for you. All of it happens in the tab.</figcaption>
+      <a class="btn btn-solid case-cta" href="https://local-forge-nine.vercel.app/" target="_blank" rel="noopener">Open LocalForge <span class="arrow">→</span></a>
+    </figure>
+
+    <section class="case-body">
+      <h2>The problem</h2>
+      <p>
+        Every "free online converter" is the same trade: you hand over a file, it goes
+        somewhere, and you hope. For a PDF made of ID scans, a client contract or a folder
+        of family photos, that's a bad deal — and the free tier usually caps you at two files
+        before asking for a card anyway.
+      </p>
+      <p>
+        The browser can already do almost all of this work. Modern APIs decode images,
+        manipulate PDFs and — with WebAssembly — transcode audio and video. So the scope
+        became one sentence: <em>a file tool where the file never leaves the device.</em>
+      </p>
+
+      <h2>The build</h2>
+      <p>
+        A single-page app with no server logic at all. Files are read with the browser's File
+        API, processed in memory (or an off-thread worker), and handed straight back as a
+        download. Bundling the heavy pieces — the FFmpeg WebAssembly core, the PDF and ZIP
+        libraries — as lazy chunks means the app stays small until you actually pick a tool.
+      </p>
+      <ul class="case-points">
+        <li><strong>Convert</strong> — images, audio and video into the format you actually need, decoded and re-encoded in the tab.</li>
+        <li><strong>Compress</strong> — images, video, audio and PDF, with the file size visible before you commit.</li>
+        <li><strong>PDF tools</strong> — merge, split, extract, rotate, reorder, images-to-PDF, PDF-to-images, watermark and page numbers.</li>
+        <li><strong>Privacy tools</strong> — strip EXIF/GPS and document metadata, then ZIP the results in one go. The "clean up before sending" row that most converters forget.</li>
+        <li><strong>No accounts, no queue, no upload bar</strong> — there is literally no endpoint receiving your file. The privacy claim is a property of the architecture, not a promise in a footer.</li>
+      </ul>
+
+      <h2>What went wrong first</h2>
+      <p>
+        Doing everything on the main thread froze the page — decoding a video locked the UI
+        so hard that even the progress bar stopped moving, which is the worst possible
+        feedback loop. Moving the heavy work to a worker (and keeping the WASM core lazy)
+        fixed it: the interface stays responsive while the tab quietly chews through the file.
+      </p>
+      <p>
+        The second miss was memory. Files processed in memory are comfortable until someone
+        drops a 400 MB video on it, at which point the tab dies without explanation. Now sizes
+        are checked up front and the app says no <em>before</em> the crash, instead of after.
+      </p>
+
+      <h2>What I learned</h2>
+      <p>
+        "No backend" isn't just cheaper — it's a feature you can prove. Every other tool on
+        the list asks you to trust a privacy policy; this one can't leak a file it never
+        receives. Designing around a hard constraint like that made the rest of the product
+        simpler: no storage, no cleanup jobs, no data-retention page, nothing to secure
+        server-side.
+      </p>
+      <p>
+        It also reset my sense of what a browser can do. WebAssembly turns the client into a
+        real compute surface, and for a whole class of tools the server was only ever there
+        out of habit.
+      </p>
+
+      <div class="case-nav">
+        <a class="btn btn-ghost" href="index.html#work">← Back to all work</a>
+        <a class="btn btn-solid" href="index.html#contact">Start a project <span class="arrow">→</span></a>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© <span id="year">2026</span> Shaswot Gautam</span>
+    <span class="footer-note">Designed &amp; built by hand — HTML, CSS, JS</span>
+    <a href="index.html#top" class="to-top">Back to portfolio ↑</a>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

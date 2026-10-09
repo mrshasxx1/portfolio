@@ -14,7 +14,7 @@ display type with italic accent moments, glass nav, film grain, and an infinite 
 - **Dev log** — three short build notes (Clip Kitchen, LanceFlow, MegaCalc) linking to the case study and live apps
 - **Light / dark theme** — toggle button in the hero, `T` keyboard shortcut, palette command; persisted in `localStorage`, respects `prefers-color-scheme`, applied pre-paint (no flash)
 - **Keyboard shortcuts** — `?` opens a shortcuts modal; `1`–`8` jump to sections; `Esc` closes anything
-- **Work filters** — All / AI / Web apps / Tools tabs over the five projects
+- **Work filters** — All / AI / Web apps / Tools tabs over the seven projects
 - **Screenshot lightbox** — click any project screenshot to view it large, with a link to the live app
 - **3D tilt + spotlight** — screenshots tilt toward the cursor with a moving sheen (desktop only)
 - **Count-up facts** — quick-stats row in About animates on first view
@@ -33,11 +33,13 @@ display type with italic accent moments, glass nav, film grain, and an infinite 
 ## Sections
 
 - **Hero** — big serif headline with an italic accent line, GitHub chip, call-to-actions, infinite tech marquee
-- **Work** — five shipped projects with live screenshots (in `shots/`), status badges, and a full case study each (build, what broke first, learnings). The flagship (Clip Kitchen) started the format:
+- **Work** — seven shipped projects with live screenshots (in `shots/`), status badges, and a full case study for each (build, what broke first, learnings). The flagship (Clip Kitchen) started the format:
   - **Clip Kitchen** — AI video reformatting for every social platform (Render)
   - **ChatBlinker** — public chat rooms, random 1-on-1 chat, private DMs (Render)
   - **MegaCalc** — standard/scientific calculator suite with unit converter, graphing and history (Vercel)
   - **LanceFlow** — freelance time tracker with PDF invoicing (Vercel)
+  - **Nepali Daily Guide** — rashifal, panchang and Bikram Sambat calendar (Base44)
+  - **LocalForge** — private file conversion, compression and PDF work, 100% in the browser (Vercel)
   - **creatorOS** — creator workspace (Vercel)
 - **Services** — what Shaswot can build for clients: web apps, Android apps, automation, games — with an FAQ accordion
 - **Testimonials** — client quotes (placeholder names — swap in real ones as they come)
